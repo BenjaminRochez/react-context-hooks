@@ -1,4 +1,4 @@
-import {userState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import  {v1 as uuid} from 'uuid';
 import NewSongForm from './NewSong';
 
@@ -12,6 +12,7 @@ const SongList = () => {
         setSongs([...songs, {title: title, id: uuid()}]);
     }
     //Use effect is a hook that mimicks the render cycle & rerun on watch - Note that you can use multiple useEffect to watch certains data
+    // the [songs] limit the watcher to the song variable
     useEffect(() => {
         console.log(songs);
     }, [songs])
